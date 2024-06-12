@@ -1,7 +1,7 @@
 import mongoose from 'mongoose'
 
 // model's rules
-const userSchema = new mongoose.Schema{{
+const userSchema = new mongoose.Schema({
     userName: {
         type: String,
         required: true,
@@ -16,8 +16,7 @@ const userSchema = new mongoose.Schema{{
         type: String,
         required: true,
     },
-    }, {timestamps: true};
-};
+    }, {timestamps: true});
 
 // create the model
 const User = mongoose.model('User', userSchema);
