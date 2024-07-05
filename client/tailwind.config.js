@@ -8,7 +8,12 @@ export default {
     flowbite.content(),
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        'parallax': 'url("../src/assets/parallax.jpg")',
+      }
+      
+    },
   },
   plugins: [
     flowbite.plugin(),
