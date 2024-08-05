@@ -16,7 +16,7 @@ const postSchema = new mongoose.Schema({
     },
     image:{
         type: String,
-        default: 'https://img.freepik.com/free-photo/vivid-blurred-colorful-background_58702-2655.jpg?w=996&t=st=1722222643~exp=1722223243~hmac=ae376a8148c9f7e93141e98162edffc118b90918ffde69ef52e1861ea932627d',
+        default: 'https://digitalsynopsis.com/wp-content/uploads/2020/07/free-vector-gradients-1.jpg',
         required: true,
     },
     category:{
