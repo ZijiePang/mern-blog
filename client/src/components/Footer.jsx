@@ -7,7 +7,7 @@ export default function FooterCom() {
     <Footer container className='border border-t-8 border-gray-300'>
         <div className='w-full max-w-7xl mx-auto'>
             <div className='grid w-full justify-between sm:flex mdLgrid-cols-1'>
-                <div className=',t-5'>
+                <div className='mt-5 mb-5'>
                     <Link to="/" className='self-center with whitespace-nowrap text-lg sm:text-xl font-semibold dark:text-white'>
                         <span className='px-2 py-1 bg-gradient-to-r from-purple-600 to-blue-500 rounded-lg text-white'>Mira's</span>
                             Blog
