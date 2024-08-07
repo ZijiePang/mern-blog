@@ -1,9 +1,9 @@
 import React from 'react'
 import { Button, Card, Carousel } from 'flowbite-react';
 import img from "../assets/about_me.jpg"
-import para1 from "../src/assets/parallax.jpg"
-import para2 from "../src/assets/parallax6.jpg"
-import para3 from "../src/assets/parallax3.jpg"
+import para1 from "../assets/parallax.jpg"
+import para2 from "../assets/parallax6.jpg"
+import para3 from "../assets/parallax3.jpg"
 export default function About() {
 
   
