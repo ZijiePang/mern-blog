@@ -34,9 +34,13 @@ export default function About() {
       </div>
       </div>
 
+      {/*
       <div className="flex items-center justify-center h-96 bg-fixed bg-parallax bg-cover" style={{ backgroundImage: 'url("../src/assets/parallax.jpg")' }}>
         <h1 className="text-5xl text-white">Adventure</h1>
       </div>
+      */}
+      <img className="flex items-center justify-center h-96 w-full object-cover" src="../src/assets/parallax.jpg"></img>
+
 
       <div className="h-96">
         <div class="bg-white dark:bg-gray-900">
@@ -49,7 +53,7 @@ export default function About() {
                       <p class="text-2xl font-medium text-gray-900 dark:text-white">"I love traveling. Some of my fav destinations: Japan, South Korea, United Kingdom, and Italy."</p>
                   </blockquote>
                   <figcaption class="flex items-center justify-center mt-6 space-x-3">
-                      <img class="w-6 h-6 rounded-full" src="https://firebasestorage.googleapis.com/v0/b/mern-blog-f3c39.appspot.com/o/1722852009691WechatIMG1111.jpg?alt=media&token=c8fd62ed-5ed4-4ff2-b496-38498eeca32e" alt="profile picture" />
+                      {/*<img class="w-6 h-6 rounded-full" src="" alt="profile picture" /> */}
                       <div class="flex items-center divide-x-2 divide-gray-500 dark:divide-gray-700">
                           <div class="pr-3 font-medium text-gray-900 dark:text-white">Mira</div>
                           <div class="pl-3 text-sm font-light text-gray-500 dark:text-gray-400">Traveller</div>
@@ -60,9 +64,13 @@ export default function About() {
         </div>
       </div>
 
+      {/*
       <div className="flex items-center justify-center h-96 bg-fixed bg-parallax bg-cover" style={{ backgroundImage: 'url("../src/assets/parallax6.jpg")' }}>
         <h1 className="text-5xl text-white">Experiences</h1>
       </div>
+      */}
+      <img className="flex items-center justify-center h-96 w-full object-cover" src="../src/assets/parallax6.jpg"></img>
+
 
       <div className="h-120">
         <div class="bg-white dark:bg-gray-900">
@@ -99,9 +107,17 @@ export default function About() {
         </div>
       </div>
 
+
+
+      {/*
       <div className="flex items-center justify-center h-96 bg-fixed bg-parallax bg-cover" style={{ backgroundImage: 'url("../src/assets/parallax3.jpg")' }}>
         <h1 className="text-5xl text-white">Thank you!</h1>
       </div>
+      */}
+
+      <img className="flex items-center justify-center h-96 w-full object-cover" src="../src/assets/parallax3.jpg"></img>
+
+      
       
       <div className="h-96">
         <div class="bg-white dark:bg-gray-900">
