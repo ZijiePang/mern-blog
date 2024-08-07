@@ -1,6 +1,9 @@
 import React from 'react'
 import { Button, Card, Carousel } from 'flowbite-react';
 import img from "../assets/about_me.jpg"
+import para1 from "../src/assets/parallax.jpg"
+import para2 from "../src/assets/parallax6.jpg"
+import para3 from "../src/assets/parallax3.jpg"
 export default function About() {
 
   
@@ -39,7 +42,7 @@ export default function About() {
         <h1 className="text-5xl text-white">Adventure</h1>
       </div>
       */}
-      <img className="flex items-center justify-center h-96 w-full object-cover" src="../src/assets/parallax.jpg"></img>
+      <img className="flex items-center justify-center h-96 w-full object-cover" src={para1}></img>
 
 
       <div className="h-96">
@@ -69,7 +72,7 @@ export default function About() {
         <h1 className="text-5xl text-white">Experiences</h1>
       </div>
       */}
-      <img className="flex items-center justify-center h-96 w-full object-cover" src="../src/assets/parallax6.jpg"></img>
+      <img className="flex items-center justify-center h-96 w-full object-cover" src={para2}></img>
 
 
       <div className="h-120">
@@ -115,7 +118,7 @@ export default function About() {
       </div>
       */}
 
-      <img className="flex items-center justify-center h-96 w-full object-cover" src="../src/assets/parallax3.jpg"></img>
+      <img className="flex items-center justify-center h-96 w-full object-cover" src={para3}></img>
 
       
       
