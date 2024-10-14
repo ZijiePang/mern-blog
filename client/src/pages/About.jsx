@@ -108,7 +108,7 @@ export default function About() {
                 <Timeline.Time>June 2022</Timeline.Time>
                 <Timeline.Title className="text-xl py-1">Bank of China Group Investment Limited &#128185; </Timeline.Title>
                 <Timeline.Body>
-                  <p className="font-bold py-1">Venture Capital Researcher - Computer Engineering Team</p>
+                  <p className="font-bold py-1">Computer Engineering Venture Capital Researcher</p>
                   <List className="list-outside ml-5">
                     <List.Item className="py-1">
                     Our team specializes in equity investments for startups, from seed rounds to Series B. 
@@ -140,11 +140,11 @@ export default function About() {
                       TalkingData is a digital marketing company that helps retail companies and luxury brands to find their target customers.
                     </List.Item>
                     <List.Item className="py-1">
-                      I took charge of front-end website development for several products.
-                      Some tools I used: JavaScript, HTML, CSS, Vue.js, ECharts, iView UI Toolkit, Jenkins, Git, and Postman. 
+                      I took charge of full-stack website development for several products.
+                      Some tools I used: JavaScript, HTML, CSS, Vue.js, ECharts, iView UI Toolkit, Spring Cloud, Spring Boot, Jenkins, Git, and Postman. 
                     </List.Item>
                     <List.Item className="py-1">
-                      Beyond just coding, I really dove into the software development workflow and sharpened my collaboration skills by working closely with PMs, back-end engineers, UI designers, and QA testers.
+                      Beyond just coding, I really dove into the software development workflow and sharpened my collaboration skills by working closely with PMs, UI designers, and QA testers.
                     </List.Item>
                     <List.Item className="py-1">
                       It was all about teamwork and bringing great ideas to life! &#10024;
@@ -166,7 +166,6 @@ export default function About() {
                 <Timeline.Time>June 2024</Timeline.Time>
                 <Timeline.Title className="text-xl">MERN Stack Blog</Timeline.Title>
                 <Timeline.Body>
-                  <p className="font-bold pb-1">Software Development Engineer Intern</p>
                   <List className="list-outside ml-5">
                   <List.Item className="py-1">
                     In an effort to level up my full-stack skills, I built this blog app (yep, the very website you’re on right now!) using MongoDB, Express, React, and Node.js. 
