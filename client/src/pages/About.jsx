@@ -1,13 +1,40 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Button, Card, Carousel, Timeline, List } from 'flowbite-react';
-import { HiArrowNarrowRight } from "react-icons/hi";
+import { HiArrowNarrowRight, HiArrowUp } from "react-icons/hi";
 
 import img from "../assets/about_me.jpg"
 import para1 from "../assets/parallax.jpg"
 import para2 from "../assets/parallax6.jpg"
 import para3 from "../assets/parallax3.jpg"
 export default function About() {
+  const [showScrollTop, setShowScrollTop] = useState(false);
 
+  // Show button when page is scrolled down
+  useEffect(() => {
+    const handleScroll = () => {
+      setShowScrollTop(window.pageYOffset > 300);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
+  const scrollToEducation = () => {
+    const educationSection = document.getElementById('education-section');
+    if (educationSection) {
+      educationSection.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  };
   
   return (
     <div>
@@ -20,11 +47,26 @@ export default function About() {
                   I’m Mira (Zijie) Pang, a current CS student at UChicago. Previously, I worked as a full-time venture capitalist for two years, focusing on tech industries such as AI and autonomous driving.
                   </p>
                   <div className="hidden lg:flex lg:mt-40">
-                    <svg className="w-6 h-6 text-blue-500 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="none" viewBox="0 0 24 24">
-                      <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 7 4 4 4-4m-8 6 4 4 4-4"/>
-                    </svg>
+                    <div 
+                      onClick={scrollToEducation}
+                      className="flex items-center cursor-pointer group transition-all duration-300 hover:transform hover:translate-x-2"
+                    >
+                      <svg 
+                        className="w-6 h-6 text-blue-500 dark:text-white group-hover:animate-bounce transition-transform duration-300" 
+                        aria-hidden="true" 
+                        xmlns="http://www.w3.org/2000/svg" 
+                        width="30" 
+                        height="30" 
+                        fill="none" 
+                        viewBox="0 0 24 24"
+                      >
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m8 7 4 4 4-4m-8 6 4 4 4-4"/>
+                      </svg>
 
-                    <p className=" text-blue-500 lg:mb-8 md:text-lg lg:text-xl dark:text-gray-400 lg:ml-1" >Learn more about me</p>
+                      <p className="text-blue-500 md:text-lg lg:text-xl dark:text-gray-400 ml-1 group-hover:text-blue-600 dark:group-hover:text-white transition-colors duration-300">
+                        Learn more about me
+                      </p>
+                    </div>
                   </div>
                   
               </div>
@@ -48,18 +90,18 @@ export default function About() {
       <img className="flex items-center justify-center h-96 w-full object-cover" src={para1}></img>
 
       <div className = "lg:pb-12">
-        <div className="pt-8 px-8 mx-auto max-w-screen-lg lg:px-6">
+        <div className="pt-8 px-8 mx-auto max-w-screen-lg lg:px-6" id="education-section">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Education</h2>
           <Timeline>
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time>September 2024</Timeline.Time>
-                <Timeline.Title className="text-xl">The University of Chicago, Physical Sciences Division &#127891;</Timeline.Title>
+                <Timeline.Time>September 2024 - December 2025</Timeline.Time>
+                <Timeline.Title className="text-xl">The University of Chicago &#127891;</Timeline.Title>
                 <Timeline.Body>
-                  <p className="font-bold pb-1">Master of Science in Computer Science</p>
+                  <p className="font-bold pb-1">Master of Science in Computer Science (GPA: 3.82/4.0)</p>
                   <List className="list-outside ml-5">
-                    <List.Item>Curriculum: Java Programming, Algorithms, Computer Systems</List.Item>
+                    <List.Item>Relevant Coursework: Distributed Systems, Cloud Computing, Algorithms, Parallel Computing, GPU Programming, Computer Systems, Databases, Data Engineering, Deep Learning Systems, UI/UX</List.Item>
                   </List>
                 </Timeline.Body>
                 
@@ -85,10 +127,10 @@ export default function About() {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time>September 2016</Timeline.Time>
-                <Timeline.Title className="text-xl">the University of Texas at Austin &#127797;</Timeline.Title>
+                <Timeline.Time>September 2016 - May 2020</Timeline.Time>
+                <Timeline.Title className="text-xl">The University of Texas at Austin &#127797;</Timeline.Title>
                 <Timeline.Body>
-                  <p className="font-bold pb-1">Bachelor and Master of Accounting (iMPA)</p>
+                  <p className="font-bold pb-1">Bachelor of Business Administration (GPA: 3.75/4.0)</p>
                   <List className="list-outside ml-5">
                     <List.Item>Curriculum: Elements of Computers and Programming, Elements of Software Design, Statistics and Modeling</List.Item>
                   </List>
@@ -105,10 +147,54 @@ export default function About() {
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
-                <Timeline.Time>June 2022</Timeline.Time>
+                <Timeline.Time>June 2025 - Present</Timeline.Time>
+                <Timeline.Title className="text-xl py-1">Neuberger Berman &#127974; </Timeline.Title>
+                <Timeline.Body>
+                  <p className="font-bold py-1">Software Engineer Intern</p>
+                  <List className="list-outside ml-5">
+                    <List.Item className="py-1">
+                    Built secure full-stack services with role-based access controls for chatbot dashboards, Deal Assistant, and more &#128274;
+                    </List.Item>
+                    <List.Item className="py-1">
+                    Modernized chatbot UI for 2,800+ daily users with real-time streaming and voice input
+                    </List.Item>
+                    <List.Item className="py-1">
+                    Created fault-tolerant data pipelines with AI integration, cutting manual workload by a lot. Let robots do the boring stuff!
+                    </List.Item>
+                    <List.Item className="py-1">
+                    Delivered Capacity Planning platform for 600 users, translating "business speak" to "developer speak"
+                    </List.Item>
+                  </List>
+                </Timeline.Body>
+              </Timeline.Content>
+            </Timeline.Item>
+
+            <Timeline.Item>
+              <Timeline.Point />
+              <Timeline.Content>
+                <Timeline.Time>January 2025 - June 2025</Timeline.Time>
+                <Timeline.Title className="text-xl py-1">AutismGPT &#129302;</Timeline.Title>
+                <Timeline.Body>
+                  <p className="font-bold py-1">AI Software Engineer Intern</p>
+                  <List className="list-outside ml-5">
+                    <List.Item className="py-1">
+                    Developed AI virtual avatar chatbot for speech therapy—like a friendly digital therapist available 24/7! &#128150;
+                    </List.Item>
+                    <List.Item className="py-1">
+                    Built full-stack features with React, Python, MongoDB, and AI tools to make therapy accessible for children with autism.
+                    </List.Item>
+                  </List>
+                </Timeline.Body>
+              </Timeline.Content>
+            </Timeline.Item>
+
+            <Timeline.Item>
+              <Timeline.Point />
+              <Timeline.Content>
+                <Timeline.Time>June 2022 - June 2024</Timeline.Time>
                 <Timeline.Title className="text-xl py-1">Bank of China Group Investment Limited &#128185; </Timeline.Title>
                 <Timeline.Body>
-                  <p className="font-bold py-1">Computer Engineering Venture Capital Researcher</p>
+                  <p className="font-bold py-1">Venture Capital Researcher</p>
                   <List className="list-outside ml-5">
                     <List.Item className="py-1">
                     Our team specializes in equity investments for startups, from seed rounds to Series B. 
@@ -160,6 +246,51 @@ export default function About() {
         <div className="pd-8 px-4 mx-auto max-w-screen-lg lg:px-6">
           <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-gray-900 dark:text-white">Projects and Prizes</h2>
           <Timeline>
+            <Timeline.Item>
+              <Timeline.Point />
+              <Timeline.Content>
+                <Timeline.Time>January 2025 - March 2025</Timeline.Time>
+                <Timeline.Title className="text-xl">Cloud-based Genomics Annotation Service &#129302;</Timeline.Title>
+                <Timeline.Body>
+                  <List className="list-outside ml-5">
+                  <List.Item className="py-1">
+                    Built Genomics Annotation SaaS on AWS (EC2, DynamoDB, SQS, S3) with Stripe payments—making DNA sequencing as convenient as ordering takeout!
+                    </List.Item>
+                  </List>
+                </Timeline.Body>
+              </Timeline.Content>
+            </Timeline.Item>
+
+            <Timeline.Item>
+              <Timeline.Point />
+              <Timeline.Content>
+                <Timeline.Time>March 2024</Timeline.Time>
+                <Timeline.Title className="text-xl">High-Concurrency Go Client-Server System &#128640;</Timeline.Title>
+                <Timeline.Body>
+                  <List className="list-outside ml-5">
+                  <List.Item className="py-1">
+                    Built high-concurrency Twitter-style system in Golang with thread-safe feed and real-time APIs—like juggling flaming torches, but with data!
+                    </List.Item>
+                  </List>
+                </Timeline.Body>
+              </Timeline.Content>
+            </Timeline.Item>
+
+            <Timeline.Item>
+              <Timeline.Point />
+              <Timeline.Content>
+                <Timeline.Time>March 2024</Timeline.Time>
+                <Timeline.Title className="text-xl">Raft-Based Distributed Message Queue &#128171;</Timeline.Title>
+                <Timeline.Body>
+                  <List className="list-outside ml-5">
+                  <List.Item className="py-1">
+                    Built Raft-based distributed message queue with fault tolerance and Docker deployment—a system that can survive digital apocalypses!
+                    </List.Item>
+                  </List>
+                </Timeline.Body>
+              </Timeline.Content>
+            </Timeline.Item>
+
             <Timeline.Item>
               <Timeline.Point />
               <Timeline.Content>
@@ -320,6 +451,16 @@ export default function About() {
         </div>
       </div>
       
+      {/* Scroll to Top Button */}
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-gray-500 hover:bg-gray-600 dark:bg-gray-600 dark:hover:bg-gray-700 text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110 z-50"
+          aria-label="Scroll to top"
+        >
+          <HiArrowUp className="w-6 h-6" />
+        </button>
+      )}
       
     </div>
     
